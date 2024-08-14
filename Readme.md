@@ -49,8 +49,7 @@ STEPS
 
 - It is basically use to enable discovery service and check metrics of each services like we have here:
 
-![Screenshot (283).png](..%2F..%2FUsers%2FUSER%2FPictures%2FScreenshots%2FScreenshot%20%28283%29.png)
-
+![Screenshot (283)](https://github.com/user-attachments/assets/efa877af-16a3-43e6-aeff-75844c9948f6)
 
 
 # *  Api Gateway Configuration: *
@@ -72,7 +71,7 @@ You will also need to fill the username and password in the Basic auth to compar
  - username : korede
  - password : korede
 
-![Screenshot (276).png](..%2F..%2FUsers%2FUSER%2FPictures%2FScreenshots%2FScreenshot%20%28276%29.png)
+![Screenshot (276)](https://github.com/user-attachments/assets/a6dd9e2e-3b91-49e9-bcdc-4de160f65c74)
 
 # * NOTE 
 
@@ -81,8 +80,7 @@ In this configuration, we have somethings different from our regular mvc model. 
 - SecurityWebFilterChain instead of the regular SecurityFilterChain
 - ReactiveAuthenticationManager instead of the regular MVC AuthenticationManager
 
-
-                   
+                
 DEVELOPMENT
 
 - Open the project on your IDE
@@ -105,7 +103,7 @@ http://localhost:8761/eureka/
 
 # *BOOK SERVICE MOCK TEST *
 
-![Screenshot (275).png](..%2F..%2FUsers%2FUSER%2FPictures%2FScreenshots%2FScreenshot%20%28275%29.png)
+![Screenshot (274)](https://github.com/user-attachments/assets/c33a65ca-791f-4054-86ec-5649e8c8296e)
 
 All our test passed! That's great!
 
@@ -115,33 +113,27 @@ All our test passed! That's great!
 NOTE - Book-Service port is originally 8081, but we have to pass through the API-GATEWAY 8080 port being the single entry point.
 This is achievable because we have routed the book-service to our API-GATEWAY here:
 
-![Screenshot (278).png](..%2F..%2FUsers%2FUSER%2FPictures%2FScreenshots%2FScreenshot%20%28278%29.png)
-
+![Screenshot (278)](https://github.com/user-attachments/assets/c6a4b0d3-8e70-43a1-bc53-29490113137b)
 
 CREATE BOOK ENDPOINT (This particular endpoint is not authenticated being the first point of contact. something like normal app sign up)
 
-![Screenshot (277).png](..%2F..%2FUsers%2FUSER%2FPictures%2FScreenshots%2FScreenshot%20%28277%29.png)
-
+![Screenshot (277)](https://github.com/user-attachments/assets/78f6cf02-c584-428c-95c4-590c12b15205)
 
 GET BOOK BY TITLE ENDPOINT
 
-![Screenshot (279).png](..%2F..%2FUsers%2FUSER%2FPictures%2FScreenshots%2FScreenshot%20%28279%29.png)
-
+![Screenshot (279)](https://github.com/user-attachments/assets/9e17d563-d713-4263-899c-1291da94c149)
 
 LIST ALL BOOKS ENDPOINT
 
-![Screenshot (280).png](..%2F..%2FUsers%2FUSER%2FPictures%2FScreenshots%2FScreenshot%20%28280%29.png)
-
+![Screenshot (280)](https://github.com/user-attachments/assets/9bffe1aa-7d4b-4d1e-9061-b16fa506a7b0)
 
 UPDATE BOOK ENDPOINT
 
-![Screenshot (281).png](..%2F..%2FUsers%2FUSER%2FPictures%2FScreenshots%2FScreenshot%20%28281%29.png)
-
+![Screenshot (281)](https://github.com/user-attachments/assets/1e68c921-11e3-4fc0-a131-fe9810159924)
 
 DELETE BOOK ENDPOINT
 
-![Screenshot (282).png](..%2F..%2FUsers%2FUSER%2FPictures%2FScreenshots%2FScreenshot%20%28282%29.png)
-
+![Screenshot (282)](https://github.com/user-attachments/assets/20d05948-037c-42a6-9720-309e603753eb)
 
 OUR ENDPOINTS ARE WORKING
 
