@@ -1,0 +1,13 @@
+
+spring:
+  application:
+    name: Gateway-Service
+  cloud:
+    gateway:
+      routes:
+        - id: Book-Service
+          uri: ${BOOK_ROUTE_URI:http://localhost:8081/}
+          predicates:
+            - Path=/api/v1/book/**
+
+
