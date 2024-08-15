@@ -29,7 +29,8 @@ public class SecurityConfig {
                 .csrf(ServerHttpSecurity.CsrfSpec::disable // Disable CSRF for the specific path
                 )
                 .authorizeExchange(exchange -> exchange
-                        .pathMatchers("/api/v1/book/create").permitAll() //unrestricted access
+                        .pathMatchers("/api/v1/book/create", "/api/v1/author/create",
+                                "/api/v1/genre/create").permitAll() //unrestricted access
                         .anyExchange().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults())

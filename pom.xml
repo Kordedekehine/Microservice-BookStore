@@ -12,9 +12,11 @@
 	<artifactId>Prunny</artifactId>
 	<packaging>pom</packaging>
 	<modules>
-		<module>Discovery-Service</module>
+		<module>Author-Service</module>
 		<module>Book-Service</module>
+		<module>Discovery-Service</module>
 		<module>Gateway</module>
+		<module>Genre-Service</module>
 	</modules>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Prunny</name>

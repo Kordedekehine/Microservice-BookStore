@@ -2,6 +2,8 @@ package com.bookstore.Book_Service.dtos;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class BooksResponseDto {
 
@@ -11,7 +13,11 @@ public class BooksResponseDto {
 
     private String description;
 
-    private String author;
+    private String isbn;
 
-    private String genre;
+    private String publisher;
+
+    private List<GenreResponseDto> genreResponseDto;
+
+
 }

@@ -16,13 +16,12 @@ public class Book {
   @Column(nullable = false,unique = true)
   private String title;
 
-
   private String description;
 
+  private String isbn;
 
-  private String author;
+  private String publisher;
 
-
-  private String genre;
+  private String genreName;
 
 }

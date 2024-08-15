@@ -11,3 +11,14 @@ spring:
             - Path=/api/v1/book/**
 
 
+        - id: Author-Service
+          uri: ${AUTHOR_ROUTE_URI:http://localhost:8082/}
+          predicates:
+            - Path=/api/v1/author/**
+
+
+        - id: Genre-Service
+          uri: ${GENRE_ROUTE_URI:http://localhost:8083/}
+          predicates:
+            - Path=/api/v1/genre/**
+

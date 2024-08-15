@@ -28,6 +28,7 @@ public class BookController {
     @PostMapping("/create")
     public ResponseEntity<Map<String, Object>> registerBook(@RequestBody BooksRequestDto bookDto) throws AlreadyExistsException, NotFoundException, AlreadyExistsException, NotFoundException {
 
+        try{
         BooksResponseDto saveBook = bookService.saveBook(bookDto);
 
         Map<String, Object> response = new HashMap<>();
@@ -36,11 +37,17 @@ public class BookController {
         response.put("message", BOOK_CREATED_SUCCESS);
         response.put("data", saveBook);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
-
+        } catch (NotFoundException e) {
+            Map<String, Object> response = new HashMap<>();
+            response.put("status", "error");
+            response.put("statusCode", HttpStatus.NOT_FOUND.value());
+            response.put("message", BOOK_NOT_FOUND);
+            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+        }
     }
 
 
-    @GetMapping("/{title}")
+    @GetMapping("getBookByTitle/{title}")
     ResponseEntity<Map<String, Object>> getBookByTitle(@PathVariable("title") String title)  throws NotFoundException {
 
         BooksResponseDto book = bookService.getBookByTitle(title);
@@ -54,8 +61,8 @@ public class BookController {
     }
 
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> updateBookDetails(@PathVariable("id") Long id, @RequestBody BooksRequestDto bookDto) {
+    @PutMapping("updateBook/{id}")
+    public ResponseEntity<Map<String, Object>> updateBookDetails(@PathVariable("id") Long id, @RequestBody BooksRequestDto bookDto) throws NotFoundException {
         BooksResponseDto updateBook = bookService.updateBook(id, bookDto);
         Map<String, Object> response = new HashMap<>();
         response.put("status", "success");
@@ -66,7 +73,7 @@ public class BookController {
     }
 
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("deleteBooks/{id}")
     public ResponseEntity<Map<String, Object>> deleteBooks(@PathVariable("id") Long id) {
 
         bookService.deleteBook(id);
@@ -89,4 +96,19 @@ public class BookController {
         response.put("data", bookList);
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("getBookByGenre/{name}")
+    ResponseEntity<Map<String, Object>> getBookBookByGenre(@PathVariable("name") String genreName)  throws NotFoundException {
+
+        BooksResponseDto booksResponseDto = bookService.getBookByGenre(genreName);
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("status", "success");
+        response.put("statusCode", HttpStatus.OK.value());
+        response.put("message", BOOK_RETRIEVED_SUCCESS);
+        response.put("data", booksResponseDto);
+        return ResponseEntity.ok(response);
+
+    }
+
 }

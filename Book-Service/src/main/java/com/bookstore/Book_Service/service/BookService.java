@@ -15,11 +15,16 @@ public interface BookService {
 
     BooksResponseDto saveBook(BooksRequestDto bookDto) throws AlreadyExistsException, NotFoundException;
 
-    BooksResponseDto updateBook(Long id, BooksRequestDto bookDto);
+    BooksResponseDto updateBook(Long id, BooksRequestDto bookDto) throws NotFoundException;
+
 
     List<BooksResponseDto> listAllBooks();
 
     BooksResponseDto getBookByTitle(String title) throws NotFoundException;
 
     void deleteBook(Long id);
+
+    //Inter Service Call
+
+    BooksResponseDto getBookByGenre (String name) throws NotFoundException;
 }

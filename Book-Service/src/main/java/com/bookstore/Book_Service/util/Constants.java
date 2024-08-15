@@ -10,4 +10,6 @@ public class Constants {
 
     public final static String BOOK_UPDATED_SUCCESS = "Book Successfully updated";
 
+    public final static String BOOK_NOT_FOUND = "Book not found";
+
 }

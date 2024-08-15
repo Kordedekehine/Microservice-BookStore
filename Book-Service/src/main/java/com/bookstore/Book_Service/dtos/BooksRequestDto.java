@@ -9,7 +9,9 @@ public class BooksRequestDto {
 
     private String description;
 
-    private String author;
+    private String isbn;
 
-    private String genre;
+    private String publisher;
+
+    private String genreName;
 }
