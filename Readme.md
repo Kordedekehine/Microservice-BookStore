@@ -3,7 +3,7 @@
 
 # ** Project Flow 
 - The client makes an HTTP request to a specific endpoint of the application, typically initiated through a web browser or API client.
-- The request passes through the gateway route directly to the specific service triggered
+- The request passes through the gateway route directly to the instance of the specific service triggered 
 - The request is received by the Controller of this service, which is responsible for handling the request.
 - The Controller extracts the necessary data from the request, such as request parameters or the request body.
 - The Controller invokes the appropriate method(s) in the Service layer to perform the required business logic and data operations.
@@ -130,6 +130,20 @@ In the security configuration, we have somethings different from our regular non
 
 - SecurityWebFilterChain instead of the regular SecurityFilterChain
 - ReactiveAuthenticationManager instead of the regular MVC AuthenticationManager
+
+-  SecurityWebFilterChain in our context it would be extended from ‘UsernamePasswordAuthenticationFilter’, responsibility of this filter is to detect if there is an attempt for authentication , if so it is forwarded to Reactive Authentication Manager.
+  
+-  Authentication is an interface that implement a specific type of authentication in our case ‘UsernamePasswordAuthenticationToken’ is the implementation of Authentication interface that specifies we want to authenticate using username and password.
+
+  # * BASIC SECURITY FLOW 
+
+  - I allowed unrestricted access to “/api/v1/service-name/create” endpoints  accross all services because they are all first point of contacts (something like sign up in a layman word)
+  - When server receive a request for authentication, in the filter chain there is an authentication filter that intercept the request.
+  - it validates the provided username and password against hardcoded values
+  - UsernamePasswordAuthenticationToken is created using the username and password provided by the user, this token is passed to the Reactive Authentication Manager.
+  -  Reactive Authentication Manager authenticates the user
+   
+  
 
   
 
