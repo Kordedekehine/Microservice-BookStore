@@ -17,7 +17,4 @@ public interface BookClient {
     @GetMapping("getBookByTitle/{title}")
     ResponseEntity<Map<String, Object>> getBookByTitle(@PathVariable("title") String title);
 
-
-
-
 }
