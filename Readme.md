@@ -150,8 +150,9 @@ In the security configuration, we have somethings different from our regular non
 - Once you have it, then run it directly from the folder the jar file was downloaded. In my case, I have it in my downloads folder. The run this commands:
    1.	cd .\Downloads
    2.	java -jar .\zipkin-server-3.4.0-exec.jar
+      
  
-      ![image](https://github.com/user-attachments/assets/994060f1-c910-41b8-8cf8-0af71656acfc)
+  ![image](https://github.com/user-attachments/assets/994060f1-c910-41b8-8cf8-0af71656acfc)
 
  
 Once it is running on our local machine, then we can run the code.
