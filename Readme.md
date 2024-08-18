@@ -144,6 +144,31 @@ In the security configuration, we have somethings different from our regular non
   -  Reactive Authentication Manager authenticates the user
    
   
+# * ZIPKIN CONFIGURATION
+
+-Because we are running it locally, I have to download the zipkin jar file directly from https://zipkin.io/pages/quickstart
+- Once you have it, then run it directly from the folder the jar file was downloaded. In my case, I have it in my downloads folder. The run this commands:
+   1.	cd .\Downloads
+   2.	java -jar .\zipkin-server-3.4.0-exec.jar
+ 
+      ![image](https://github.com/user-attachments/assets/994060f1-c910-41b8-8cf8-0af71656acfc)
+
+ 
+Once it is running on our local machine, then we can run the code.
+
+To monitor how our services interacts and the distributed tracing system. And also to gather timing data needed to troubleshoot latency problems in service architectures then we can check the trace and span using the port:
+
+http://localhost:9411/zipkin/
+
+Then we can start tracing our service interactions in real time
+
+![Screenshot (292)](https://github.com/user-attachments/assets/52c37c6a-5f77-403d-bf56-494f21b55e9d)
+
+![Screenshot (293)](https://github.com/user-attachments/assets/e192add7-fa4f-4f93-bf71-414a71e52bc3)
+
+
+
+
 
   
 
